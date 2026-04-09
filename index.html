@@ -6,7 +6,7 @@
   <title>Hippolyte Cousin — CTI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,9 +24,10 @@
 
 <!-- ══ HERO ══════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+  <div class="hero-corner hero-corner--tl"></div>
+  <div class="hero-corner hero-corner--tr"></div>
+  <div class="hero-corner hero-corner--bl"></div>
+  <div class="hero-corner hero-corner--br"></div>
 
   <div class="hero-inner">
     <p class="hero-eyebrow">CTI Engineer &amp; Threat Hunter</p>
@@ -35,9 +36,6 @@
       <span class="name-last">Cousin</span>
     </h1>
     <p class="hero-tagline">
-      Après trois années comme ingénieur R&amp;D et analyste CTI,
-      je souhaite consolider mon analyse du renseignement technique
-      et développer une expertise approfondie.
     </p>
     <div class="hero-actions">
       <a class="btn btn-cyan"
@@ -60,10 +58,16 @@
     </div>
   </div>
 
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
+  <div class="hero-cta-right">
+    <span class="hero-cta-text">découvrez mes projets</span>
+    <svg class="hero-cta-arrow" viewBox="0 0 90 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 15 C85 15, 85 50, 60 55 C35 60, 20 75, 30 95 C38 110, 50 115, 42 130"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <polyline points="37,120 42,130 48,120"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
   </div>
+
 </section>
 
 <hr class="section-divider" />
@@ -71,18 +75,23 @@
 <!-- ══ PROJETS ═══════════════════════════════════════════ -->
 <section id="projects">
   <div class="section-wrap">
-    <p class="section-label reveal">Mes projets</p>
-
-    <div class="tl-layout">
+    <div class="timeline">
 
       <!-- ── En cours ── -->
-      <div class="tl-left reveal">
-        <div class="tl-dot active"></div>
-        <div class="tl-connector"></div>
-        <span class="tl-date active">En cours</span>
-      </div>
-      <div class="reveal reveal-delay-1">
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-stamp active">En cours</span>
+          <div class="tl-dot active"></div>
+        </div>
         <div class="project-card wip">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="term-path">~/projects/censys-geopolitique</span>
+          </div>
           <div class="project-body">
             <div class="project-header">
               <span class="project-name">Censys × Géopolitique</span>
@@ -107,70 +116,75 @@
       </div>
 
       <!-- ── Avr. 2026 ── -->
-      <div class="tl-left reveal reveal-delay-1">
-        <div class="tl-dot"></div>
-        <div class="tl-connector"></div>
-        <span class="tl-date">Avr. 2026</span>
-      </div>
-      <div class="reveal reveal-delay-2">
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-meta">
+          <span class="tl-stamp">Avr. 2026</span>
+          <div class="tl-dot"></div>
+        </div>
         <div class="project-card">
-          <div class="browser-bar">
-            <div class="browser-dots">
-              <span class="dot-r"></span>
-              <span class="dot-y"></span>
-              <span class="dot-g"></span>
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">malwaresiblings.up.railway.app</div>
+            <span class="term-path">~/projects/malware-siblings</span>
           </div>
           <div class="project-body">
             <div class="project-header">
-              <span class="project-name">Malware Siblings</span>
+              <div class="project-title-group">
+                <span class="project-name">Malware Siblings</span>
+                <span class="project-url">malwaresiblings.up.railway.app</span>
+              </div>
               <a class="project-link-btn"
                  href="https://malwaresiblings.up.railway.app/"
-                 target="_blank" rel="noopener">
-                Voir ↗
-              </a>
+                 target="_blank" rel="noopener">Voir ↗</a>
             </div>
             <p class="project-desc">
               Moteur de recherche par similarité de malwares basé sur le hachage
               TLSH (Trend Micro Locality Sensitive Hash). Permet de retrouver des
               échantillons proches d'un binaire donné afin d'identifier des variantes
-              d'une même famille et de faciliter l'attribution de campagnes.
+              d'une même famille, de faciliter l'attribution de campagnes et de
+              traquer les infrastructures associées via la corrélation avec des
+              sources de menaces (MalwareBazaar, URLhaus).
             </p>
             <div class="tags">
               <span class="tag green">Python</span>
               <span class="tag cyan">TLSH</span>
               <span class="tag purple">MalwareBazaar</span>
+              <span class="tag orange">URLhaus</span>
               <span class="tag">Threat Intel</span>
-              <span class="tag">Clustering</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Github Workflow</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- ── Mars 2026 ── -->
-      <div class="tl-left last reveal reveal-delay-2">
-        <div class="tl-dot"></div>
-        <span class="tl-date">Mars 2026</span>
-      </div>
-      <div class="reveal reveal-delay-3">
+      <div class="tl-item reveal reveal-delay-2">
+        <div class="tl-meta">
+          <span class="tl-stamp">Mars 2026</span>
+          <div class="tl-dot"></div>
+        </div>
         <div class="project-card">
-          <div class="browser-bar">
-            <div class="browser-dots">
-              <span class="dot-r"></span>
-              <span class="dot-y"></span>
-              <span class="dot-g"></span>
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
             </div>
-            <div class="browser-url">certitude.up.railway.app</div>
+            <span class="term-path">~/projects/certitude</span>
           </div>
           <div class="project-body">
             <div class="project-header">
-              <span class="project-name">CERTitude</span>
+              <div class="project-title-group">
+                <span class="project-name">CERTitude</span>
+                <span class="project-url">certitude.up.railway.app</span>
+              </div>
               <a class="project-link-btn"
                  href="https://certitude.up.railway.app/"
-                 target="_blank" rel="noopener">
-                Voir ↗
-              </a>
+                 target="_blank" rel="noopener">Voir ↗</a>
             </div>
             <p class="project-desc">
               Analyse de certificats TLS de domaines en temps réel pour détecter
