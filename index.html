@@ -24,7 +24,9 @@
 
 <!-- ══ HERO ══════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-orb"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 
   <div class="hero-inner">
     <p class="hero-eyebrow">CTI Engineer &amp; Threat Hunter</p>
@@ -32,13 +34,10 @@
       <span class="name-first">Hippolyte</span>
       <span class="name-last">Cousin</span>
     </h1>
-    <div class="hero-divider">
-      <span class="hero-divider-label">CTI × Threat Intel × OSINT · Paris, FR</span>
-    </div>
     <p class="hero-tagline">
-      Après trois années comme ingénieur R&amp;D et analyste CTI,
-      je souhaite consolider mon analyse du renseignement technique
-      et développer une expertise approfondie.
+      Passionné par la cybersécurité et la géopolitique, je conçois des projets
+      de Threat Intelligence axés sur l'analyse d'infrastructures malveillantes
+      et la corrélation d'observations techniques avec des événements du monde réel.
     </p>
     <div class="hero-actions">
       <a class="btn btn-cyan"
@@ -49,14 +48,6 @@
           <circle cx="4" cy="4" r="2"/>
         </svg>
         LinkedIn
-      </a>
-      <a class="btn btn-ghost"
-         href="https://github.com/hippolyte-c"
-         target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-        </svg>
-        GitHub
       </a>
     </div>
   </div>
@@ -78,88 +69,134 @@
 <!-- ══ PROJETS ═══════════════════════════════════════════ -->
 <section id="projects">
   <div class="section-wrap">
-    <div class="projects-grid">
+    <div class="timeline">
 
-      <!-- ── En cours (featured) ── -->
-      <div class="project-card wip card-orange featured reveal" data-num="01">
-        <div class="project-body">
-          <div class="card-meta">
-            <span class="card-date">En cours</span>
-            <span class="badge-wip">Live</span>
+      <!-- ── En cours ── -->
+      <div class="tl-item reveal">
+        <div class="tl-meta">
+          <span class="tl-stamp active">En cours</span>
+          <div class="tl-dot active"></div>
+        </div>
+        <div class="project-card wip">
+          <div class="browser-chrome chrome-orange">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-bar">censys-geopolitique.local</div>
           </div>
-          <span class="project-name">Censys × Géopolitique</span>
-          <p class="project-desc">
-            Via un accès partenariat Recherche Censys, corrélation d'observations
-            (infrastructures, services exposés, changements de bannières) avec des
-            événements géopolitiques réels — tensions, conflits, élections.
-            L'objectif : mesurer si et comment l'activité cyber observable sur
-            internet reflète ou anticipe les évolutions du monde réel.
-          </p>
-          <div class="tags">
-            <span class="tag green">Python</span>
-            <span class="tag orange">Censys API</span>
-            <span class="tag cyan">OSINT</span>
-            <span class="tag purple">Géopolitique</span>
-            <span class="tag">Infrastructure Hunting</span>
+          <div class="project-body">
+            <div class="project-header">
+              <span class="project-name">Censys × Géopolitique</span>
+              <span class="badge-wip">En cours</span>
+            </div>
+            <p class="project-desc">
+              Via un accès partenariat Recherche Censys, corrélation d'observations
+              (infrastructures, services exposés, changements de bannières) avec des
+              événements géopolitiques réels — tensions, conflits, élections.
+              L'objectif : mesurer si et comment l'activité cyber observable sur
+              internet reflète ou anticipe les évolutions du monde réel.
+            </p>
+            <div class="tags">
+              <span class="tag green">Python</span>
+              <span class="tag orange">Censys API</span>
+              <span class="tag cyan">OSINT</span>
+              <span class="tag purple">Géopolitique</span>
+              <span class="tag">Infrastructure Hunting</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ── Avr. 2026 ── -->
-      <div class="project-card card-cyan reveal reveal-delay-1" data-num="02">
-        <div class="project-body">
-          <div class="card-meta">
-            <span class="card-date">Avr. 2026</span>
-            <a class="project-link-btn"
-               href="https://malwaresiblings.up.railway.app/"
-               target="_blank" rel="noopener">Voir ↗</a>
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-meta">
+          <span class="tl-stamp">Avr. 2026</span>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="project-card">
+          <div class="browser-chrome chrome-purple">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-bar">malwaresiblings.up.railway.app</div>
           </div>
-          <span class="project-name">Malware Siblings</span>
-          <span class="project-url">malwaresiblings.up.railway.app</span>
-          <p class="project-desc">
-            Moteur de recherche par similarité de malwares basé sur le hachage
-            TLSH (Trend Micro Locality Sensitive Hash). Permet de retrouver des
-            échantillons proches d'un binaire donné afin d'identifier des variantes
-            d'une même famille, de faciliter l'attribution de campagnes et de
-            traquer les infrastructures associées via la corrélation avec des
-            sources de menaces (MalwareBazaar, URLhaus).
-          </p>
-          <div class="tags">
-            <span class="tag green">Python</span>
-            <span class="tag cyan">TLSH</span>
-            <span class="tag purple">MalwareBazaar</span>
-            <span class="tag orange">URLhaus</span>
-            <span class="tag">Threat Intel</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">Github Workflow</span>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title-group">
+                <span class="project-name">Malware Siblings</span>
+                <span class="project-url">malwaresiblings.up.railway.app</span>
+              </div>
+              <a class="project-link-btn"
+                 href="https://malwaresiblings.up.railway.app/"
+                 target="_blank" rel="noopener">
+                Voir ↗
+              </a>
+            </div>
+            <p class="project-desc">
+              Moteur de recherche par similarité de malwares basé sur le hachage
+              TLSH (Trend Micro Locality Sensitive Hash). Permet de retrouver des
+              échantillons proches d'un binaire donné afin d'identifier des variantes
+              d'une même famille, de faciliter l'attribution de campagnes et de
+              traquer les infrastructures associées via la corrélation avec des
+              sources de menaces (MalwareBazaar, URLhaus).
+            </p>
+            <div class="tags">
+              <span class="tag green">Python</span>
+              <span class="tag cyan">TLSH</span>
+              <span class="tag purple">MalwareBazaar</span>
+              <span class="tag orange">URLhaus</span>
+              <span class="tag">Threat Intel</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Github Workflow</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ── Mars 2026 ── -->
-      <!-- ── Mars 2026 ── -->
-      <div class="project-card card-purple reveal reveal-delay-2" data-num="03">
-        <div class="project-body">
-          <div class="card-meta">
-            <span class="card-date">Mars 2026</span>
-            <a class="project-link-btn"
-               href="https://certitude.up.railway.app/"
-               target="_blank" rel="noopener">Voir ↗</a>
+      <div class="tl-item reveal reveal-delay-2">
+        <div class="tl-meta">
+          <span class="tl-stamp">Mars 2026</span>
+          <div class="tl-dot"></div>
+        </div>
+        <div class="project-card">
+          <div class="browser-chrome chrome-cyan">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-bar">certitude.up.railway.app</div>
           </div>
-          <span class="project-name">CERTitude</span>
-          <span class="project-url">certitude.up.railway.app</span>
-          <p class="project-desc">
-            Analyse de certificats TLS de domaines en temps réel pour détecter
-            des menaces ciblant des pays spécifiques. Surveille les flux de
-            transparence des certificats (CT logs) afin d'identifier des
-            infrastructures malveillantes à leur création.
-          </p>
-          <div class="tags">
-            <span class="tag green">Python</span>
-            <span class="tag cyan">TLS / CT Logs</span>
-            <span class="tag purple">Real-time</span>
-            <span class="tag">Threat Detection</span>
-            <span class="tag">Infrastructure</span>
+          <div class="project-body">
+            <div class="project-header">
+              <div class="project-title-group">
+                <span class="project-name">CERTitude</span>
+                <span class="project-url">certitude.up.railway.app</span>
+              </div>
+              <a class="project-link-btn"
+                 href="https://certitude.up.railway.app/"
+                 target="_blank" rel="noopener">
+                Voir ↗
+              </a>
+            </div>
+            <p class="project-desc">
+              Analyse de certificats TLS de domaines en temps réel pour détecter
+              des menaces ciblant des pays spécifiques. Surveille les flux de
+              transparence des certificats (CT logs) afin d'identifier des
+              infrastructures malveillantes à leur création.
+            </p>
+            <div class="tags">
+              <span class="tag green">Python</span>
+              <span class="tag cyan">TLS / CT Logs</span>
+              <span class="tag purple">Real-time</span>
+              <span class="tag">Threat Detection</span>
+              <span class="tag">Infrastructure</span>
+            </div>
           </div>
         </div>
       </div>
