@@ -50,11 +50,11 @@ html, body {
   gap: 0;
 }
 
-.apple-logo {
-  width: 13px; height: 16px;
-  margin-right: 0.85rem;
-  opacity: 0.85;
+.monogram {
+  width: 22px; height: 22px;
+  margin-right: 0.6rem;
   flex-shrink: 0;
+  border-radius: 6px;
 }
 
 .menubar-app { font-weight: 700; }
@@ -153,7 +153,6 @@ html, body {
   box-shadow:
     3px 5px 14px rgba(0,0,0,0.13),
     0 1px 3px rgba(0,0,0,0.08);
-  transform: rotate(-1.5deg);
   cursor: grab;
   z-index: 10;
   animation: fadeIn 0.8s 0.15s both;
