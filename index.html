@@ -29,10 +29,8 @@
 <!-- ── Bureau ────────────────────────────────────────── -->
 <main class="desktop">
 
-  <!-- Fond animé -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+  <!-- Fond : carte cyber -->
+  <canvas id="cybermap"></canvas>
 
   <!-- Post-it identité (déplaçable) -->
   <div class="postit" id="postit" style="top:10%; left:4%">
@@ -48,29 +46,27 @@
     </p>
   </div>
 
-  <!-- Icônes de dossiers (centre) -->
+  <!-- Label "Mes projets" (statique, centré) -->
   <div class="desktop-icons">
     <p class="icons-label">Mes projets</p>
-    <div class="icons-row">
-
-      <button class="dsk-icon" data-win="censys">
-        <div class="folder f-orange"></div>
-        <span>Censys × Géopolitique</span>
-      </button>
-
-      <button class="dsk-icon" data-win="malware">
-        <div class="folder f-purple"></div>
-        <span>Malware Siblings</span>
-      </button>
-
-      <button class="dsk-icon" data-win="certitude">
-        <div class="folder f-cyan"></div>
-        <span>CERTitude</span>
-      </button>
-
-    </div>
     <p class="icons-hint">cliquer pour ouvrir</p>
   </div>
+
+  <!-- Dossiers (déplaçables individuellement) -->
+  <button class="dsk-icon" data-win="censys"   style="top:calc(50% - 55px); left:calc(50% - 178px)">
+    <div class="folder f-orange"></div>
+    <span>Censys × Géopolitique</span>
+  </button>
+
+  <button class="dsk-icon" data-win="malware"  style="top:calc(50% - 55px); left:calc(50% - 46px)">
+    <div class="folder f-purple"></div>
+    <span>Malware Siblings</span>
+  </button>
+
+  <button class="dsk-icon" data-win="certitude" style="top:calc(50% - 55px); left:calc(50% + 86px)">
+    <div class="folder f-cyan"></div>
+    <span>CERTitude</span>
+  </button>
 
   <!-- ── Fenêtres ── -->
 
