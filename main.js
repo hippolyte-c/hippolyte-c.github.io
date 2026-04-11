@@ -53,9 +53,9 @@
       this.p1    = project(a.lon, a.lat, W, H);
       this.p2    = project(b.lon, b.lat, W, H);
       this.prog  = 0;
-      this.speed = 0.004 + Math.random() * 0.006;
+      this.speed = 0.0008 + Math.random() * 0.001;
       this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.tail  = 0.22 + Math.random() * 0.18;
+      this.tail  = 0.12 + Math.random() * 0.1;
       this.done  = false;
       this.fade  = 1;
 
@@ -92,15 +92,15 @@
         if (i === 0) ctx.moveTo(p.x, p.y);
         else ctx.lineTo(p.x, p.y);
       }
-      ctx.strokeStyle = this.color + '0.7)';
-      ctx.lineWidth   = 1.2;
+      ctx.strokeStyle = this.color + '0.28)';
+      ctx.lineWidth   = 0.8;
       ctx.stroke();
 
-      /* Point lumineux à la tête */
+      /* Point à la tête */
       const tip = this.bezier(head);
       ctx.beginPath();
-      ctx.arc(tip.x, tip.y, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + '1)';
+      ctx.arc(tip.x, tip.y, 1.5, 0, Math.PI * 2);
+      ctx.fillStyle = this.color + '0.55)';
       ctx.fill();
     }
   }
@@ -111,14 +111,8 @@
       const p = project(c.lon, c.lat, W, H);
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(100,180,255,0.5)';
+      ctx.fillStyle = 'rgba(100,180,255,0.25)';
       ctx.fill();
-      /* Halo */
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(100,180,255,0.15)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
     });
   }
 
@@ -170,7 +164,7 @@
   }
 
   /* Arcs */
-  const MAX_ARCS = 12;
+  const MAX_ARCS = 5;
   let arcs = [];
 
   function resize() {
