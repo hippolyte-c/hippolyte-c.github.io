@@ -11,209 +11,218 @@
 </head>
 <body>
 
-<!-- PROGRESS BAR -->
-<div id="progress-bar"></div>
+<!-- ── Menu bar macOS ────────────────────────────────── -->
+<header class="menubar">
+  <div class="menubar-left">
+    <svg class="apple-logo" viewBox="0 0 14 17" fill="currentColor">
+      <path d="M13.23 11.56c-.31.69-.46 1-.85 1.61-.56.84-1.34 1.89-2.31 1.9-.86.01-1.08-.56-2.25-.55-1.16.01-1.41.56-2.27.55-.97-.01-1.71-1.04-2.27-1.88-1.56-2.37-1.72-5.15-.76-6.62.68-1.06 1.74-1.67 2.74-1.67 1.02 0 1.66.56 2.5.56.82 0 1.32-.56 2.5-.56.89 0 1.84.49 2.52 1.33-.15.1-1.52.87-1.5 2.6.02 2.06 1.82 2.74 1.95 2.73zM9.6.5c.49.61.87 1.48.74 2.38-.79.05-1.71-.44-2.24-1.04-.49-.54-.91-1.42-.77-2.28.87.01 1.77.52 2.27.94z"/>
+    </svg>
+    <span class="menubar-app">Finder</span>
+    <span class="menubar-menu">Fichier</span>
+    <span class="menubar-menu">Présentation</span>
+    <span class="menubar-menu">Aller</span>
+  </div>
+  <div class="menubar-right">
+    <a href="https://github.com/hippolyte-c" target="_blank" rel="noopener" class="menubar-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/hippolyte-cousin/?locale=en" target="_blank" rel="noopener" class="menubar-link">LinkedIn</a>
+    <span class="menubar-time" id="menubar-time">--:--</span>
+  </div>
+</header>
 
-<!-- NAV -->
-<nav id="navbar">
-  <div class="nav-brand">Hippolyte</div>
-  <ul class="nav-links">
-    <li><a href="#projects" data-section="projects">Projets</a></li>
-  </ul>
-</nav>
+<!-- ── Bureau ────────────────────────────────────────── -->
+<main class="desktop">
 
-<!-- ══ HERO ══════════════════════════════════════════════ -->
-<section id="hero">
+  <!-- Fond animé -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
-  <div class="hero-inner">
-    <p class="hero-eyebrow">CTI Engineer &amp; Threat Hunter</p>
-    <h1>
-      <span class="name-first">Hippolyte</span>
-      <span class="name-last">Cousin</span>
+  <!-- Identité (gauche) -->
+  <div class="desktop-id">
+    <p class="id-eyebrow">CTI Engineer &amp; Threat Hunter</p>
+    <h1 class="id-name">
+      <span>Hippolyte</span>
+      <span class="id-name-last">Cousin</span>
     </h1>
-    <p class="hero-tagline">
+    <p class="id-bio">
       Passionné par la cybersécurité et la géopolitique, je conçois des projets
       de Threat Intelligence axés sur l'analyse d'infrastructures malveillantes
       et la corrélation d'observations techniques avec des événements du monde réel.
     </p>
-    <div class="hero-actions">
-      <a class="btn btn-cyan"
-         href="https://www.linkedin.com/in/hippolyte-cousin/?locale=en"
-         target="_blank" rel="noopener">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-        LinkedIn
-      </a>
+    <a class="btn btn-cyan"
+       href="https://www.linkedin.com/in/hippolyte-cousin/?locale=en"
+       target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+      LinkedIn
+    </a>
+  </div>
+
+  <!-- Icônes de dossiers (droite) -->
+  <div class="desktop-icons">
+
+    <button class="dsk-icon" data-win="censys">
+      <div class="folder f-orange"></div>
+      <span>Censys × Géopolitique</span>
+    </button>
+
+    <button class="dsk-icon" data-win="malware">
+      <div class="folder f-purple"></div>
+      <span>Malware Siblings</span>
+    </button>
+
+    <button class="dsk-icon" data-win="certitude">
+      <div class="folder f-cyan"></div>
+      <span>CERTitude</span>
+    </button>
+
+  </div>
+
+  <!-- ── Fenêtres ── -->
+
+  <div class="mac-win" id="win-censys" style="top:9%; left:22%">
+    <div class="win-chrome chrome-orange win-bar">
+      <div class="win-dots">
+        <span class="dot dot-red"   data-close="censys"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="win-url">censys-geopolitique.local</div>
+    </div>
+    <div class="project-body">
+      <div class="project-header">
+        <span class="project-name">Censys × Géopolitique</span>
+        <span class="badge-wip">En cours</span>
+      </div>
+      <p class="project-desc">
+        Via un accès partenariat Recherche Censys, corrélation d'observations
+        (infrastructures, services exposés, changements de bannières) avec des
+        événements géopolitiques réels — tensions, conflits, élections.
+        L'objectif : mesurer si et comment l'activité cyber observable sur
+        internet reflète ou anticipe les évolutions du monde réel.
+      </p>
+      <div class="tags">
+        <span class="tag green">Python</span>
+        <span class="tag orange">Censys API</span>
+        <span class="tag cyan">OSINT</span>
+        <span class="tag purple">Géopolitique</span>
+        <span class="tag">Infrastructure Hunting</span>
+      </div>
     </div>
   </div>
 
-  <div class="hero-cta-right">
-    <span class="hero-cta-text">découvrez mes projets</span>
-    <svg class="hero-cta-arrow" viewBox="0 0 90 135" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 15 C85 15, 85 50, 60 55 C35 60, 20 75, 30 95 C38 110, 50 115, 42 130"
-            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <polyline points="37,120 42,130 48,120"
-            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
-  </div>
-
-</section>
-
-<hr class="section-divider" />
-
-<!-- ══ PROJETS ═══════════════════════════════════════════ -->
-<section id="projects">
-  <div class="section-wrap">
-    <div class="timeline">
-
-      <!-- ── En cours ── -->
-      <div class="tl-item reveal">
-        <div class="tl-meta">
-          <span class="tl-stamp active">En cours</span>
-          <div class="tl-dot active"></div>
-        </div>
-        <div class="project-card wip">
-          <div class="browser-chrome chrome-orange">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <div class="browser-bar">censys-geopolitique.local</div>
-          </div>
-          <div class="project-body">
-            <div class="project-header">
-              <span class="project-name">Censys × Géopolitique</span>
-              <span class="badge-wip">En cours</span>
-            </div>
-            <p class="project-desc">
-              Via un accès partenariat Recherche Censys, corrélation d'observations
-              (infrastructures, services exposés, changements de bannières) avec des
-              événements géopolitiques réels — tensions, conflits, élections.
-              L'objectif : mesurer si et comment l'activité cyber observable sur
-              internet reflète ou anticipe les évolutions du monde réel.
-            </p>
-            <div class="tags">
-              <span class="tag green">Python</span>
-              <span class="tag orange">Censys API</span>
-              <span class="tag cyan">OSINT</span>
-              <span class="tag purple">Géopolitique</span>
-              <span class="tag">Infrastructure Hunting</span>
-            </div>
-          </div>
-        </div>
+  <div class="mac-win" id="win-malware" style="top:16%; left:28%">
+    <div class="win-chrome chrome-purple win-bar">
+      <div class="win-dots">
+        <span class="dot dot-red"   data-close="malware"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
       </div>
-
-      <!-- ── Avr. 2026 ── -->
-      <div class="tl-item reveal reveal-delay-1">
-        <div class="tl-meta">
-          <span class="tl-stamp">Avr. 2026</span>
-          <div class="tl-dot"></div>
+      <div class="win-url">malwaresiblings.up.railway.app</div>
+    </div>
+    <div class="project-body">
+      <div class="project-header">
+        <div class="project-title-group">
+          <span class="project-name">Malware Siblings</span>
+          <span class="project-url">malwaresiblings.up.railway.app</span>
         </div>
-        <div class="project-card">
-          <div class="browser-chrome chrome-purple">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <div class="browser-bar">malwaresiblings.up.railway.app</div>
-          </div>
-          <div class="project-body">
-            <div class="project-header">
-              <div class="project-title-group">
-                <span class="project-name">Malware Siblings</span>
-                <span class="project-url">malwaresiblings.up.railway.app</span>
-              </div>
-              <a class="project-link-btn"
-                 href="https://malwaresiblings.up.railway.app/"
-                 target="_blank" rel="noopener">
-                Voir ↗
-              </a>
-            </div>
-            <p class="project-desc">
-              Moteur de recherche par similarité de malwares basé sur le hachage
-              TLSH (Trend Micro Locality Sensitive Hash). Permet de retrouver des
-              échantillons proches d'un binaire donné afin d'identifier des variantes
-              d'une même famille, de faciliter l'attribution de campagnes et de
-              traquer les infrastructures associées via la corrélation avec des
-              sources de menaces (MalwareBazaar, URLhaus).
-            </p>
-            <div class="tags">
-              <span class="tag green">Python</span>
-              <span class="tag cyan">TLSH</span>
-              <span class="tag purple">MalwareBazaar</span>
-              <span class="tag orange">URLhaus</span>
-              <span class="tag">Threat Intel</span>
-              <span class="tag">SQLite</span>
-              <span class="tag">Github Workflow</span>
-            </div>
-          </div>
-        </div>
+        <a class="project-link-btn" href="https://malwaresiblings.up.railway.app/" target="_blank" rel="noopener">Voir ↗</a>
       </div>
-
-      <!-- ── Mars 2026 ── -->
-      <div class="tl-item reveal reveal-delay-2">
-        <div class="tl-meta">
-          <span class="tl-stamp">Mars 2026</span>
-          <div class="tl-dot"></div>
-        </div>
-        <div class="project-card">
-          <div class="browser-chrome chrome-cyan">
-            <div class="browser-dots">
-              <span class="dot dot-red"></span>
-              <span class="dot dot-yellow"></span>
-              <span class="dot dot-green"></span>
-            </div>
-            <div class="browser-bar">certitude.up.railway.app</div>
-          </div>
-          <div class="project-body">
-            <div class="project-header">
-              <div class="project-title-group">
-                <span class="project-name">CERTitude</span>
-                <span class="project-url">certitude.up.railway.app</span>
-              </div>
-              <a class="project-link-btn"
-                 href="https://certitude.up.railway.app/"
-                 target="_blank" rel="noopener">
-                Voir ↗
-              </a>
-            </div>
-            <p class="project-desc">
-              Analyse de certificats TLS de domaines en temps réel pour détecter
-              des menaces ciblant des pays spécifiques. Surveille les flux de
-              transparence des certificats (CT logs) afin d'identifier des
-              infrastructures malveillantes à leur création.
-            </p>
-            <div class="tags">
-              <span class="tag green">Python</span>
-              <span class="tag cyan">TLS / CT Logs</span>
-              <span class="tag purple">Real-time</span>
-              <span class="tag">Threat Detection</span>
-              <span class="tag">Infrastructure</span>
-            </div>
-          </div>
-        </div>
+      <p class="project-desc">
+        Moteur de recherche par similarité de malwares basé sur le hachage
+        TLSH (Trend Micro Locality Sensitive Hash). Permet de retrouver des
+        échantillons proches d'un binaire donné afin d'identifier des variantes
+        d'une même famille, de faciliter l'attribution de campagnes et de
+        traquer les infrastructures associées via la corrélation avec des
+        sources de menaces (MalwareBazaar, URLhaus).
+      </p>
+      <div class="tags">
+        <span class="tag green">Python</span>
+        <span class="tag cyan">TLSH</span>
+        <span class="tag purple">MalwareBazaar</span>
+        <span class="tag orange">URLhaus</span>
+        <span class="tag">Threat Intel</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Github Workflow</span>
       </div>
-
     </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-left">© 2026 Hippolyte Cousin</div>
-  <div class="footer-links">
-    <a href="https://github.com/hippolyte-c" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/hippolyte-cousin/?locale=en" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://malwaresiblings.up.railway.app/" target="_blank" rel="noopener">Malware Siblings</a>
+  <div class="mac-win" id="win-certitude" style="top:7%; left:34%">
+    <div class="win-chrome chrome-cyan win-bar">
+      <div class="win-dots">
+        <span class="dot dot-red"   data-close="certitude"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="win-url">certitude.up.railway.app</div>
+    </div>
+    <div class="project-body">
+      <div class="project-header">
+        <div class="project-title-group">
+          <span class="project-name">CERTitude</span>
+          <span class="project-url">certitude.up.railway.app</span>
+        </div>
+        <a class="project-link-btn" href="https://certitude.up.railway.app/" target="_blank" rel="noopener">Voir ↗</a>
+      </div>
+      <p class="project-desc">
+        Analyse de certificats TLS de domaines en temps réel pour détecter
+        des menaces ciblant des pays spécifiques. Surveille les flux de
+        transparence des certificats (CT logs) afin d'identifier des
+        infrastructures malveillantes à leur création.
+      </p>
+      <div class="tags">
+        <span class="tag green">Python</span>
+        <span class="tag cyan">TLS / CT Logs</span>
+        <span class="tag purple">Real-time</span>
+        <span class="tag">Threat Detection</span>
+        <span class="tag">Infrastructure</span>
+      </div>
+    </div>
   </div>
-</footer>
+
+</main>
+
+<!-- ── Dock ──────────────────────────────────────────── -->
+<nav class="dock">
+  <a class="dock-item" href="https://github.com/hippolyte-c" target="_blank" rel="noopener">
+    <div class="dock-icon">
+      <svg viewBox="0 0 24 24" fill="white">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+    </div>
+    <span>GitHub</span>
+  </a>
+  <a class="dock-item" href="https://www.linkedin.com/in/hippolyte-cousin/?locale=en" target="_blank" rel="noopener">
+    <div class="dock-icon dock-linkedin">
+      <svg viewBox="0 0 24 24" fill="white">
+        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </div>
+    <span>LinkedIn</span>
+  </a>
+  <div class="dock-sep"></div>
+  <a class="dock-item" href="https://malwaresiblings.up.railway.app/" target="_blank" rel="noopener">
+    <div class="dock-icon dock-purple">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12"/>
+        <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+      </svg>
+    </div>
+    <span>Malware Siblings</span>
+  </a>
+  <a class="dock-item" href="https://certitude.up.railway.app/" target="_blank" rel="noopener">
+    <div class="dock-icon dock-cyan">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    </div>
+    <span>CERTitude</span>
+  </a>
+</nav>
 
 <script src="main.js"></script>
 </body>
