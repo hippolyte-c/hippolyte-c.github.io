@@ -158,45 +158,52 @@ html, body {
   66%       { transform: translate(-18px, 28px) scale(0.97); }
 }
 
-/* ─── IDENTITÉ ───────────────────────────────────────── */
-.desktop-id {
+/* ─── POST-IT ────────────────────────────────────────── */
+.postit {
   position: absolute;
-  left: clamp(2.5rem, 7vw, 5rem);
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 460px;
-  z-index: 1;
+  width: 290px;
+  background: #fef9c3;
+  padding: 1.4rem 1.6rem 1.5rem;
+  border-radius: 2px;
+  box-shadow:
+    3px 5px 14px rgba(0,0,0,0.13),
+    0 1px 3px rgba(0,0,0,0.08);
+  transform: rotate(-1.5deg);
+  cursor: grab;
+  z-index: 10;
   animation: fadeIn 0.8s 0.15s both;
+  user-select: none;
+}
+.postit:active { cursor: grabbing; }
+
+/* Bande collante en haut */
+.postit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.07), transparent);
+  border-radius: 2px 2px 0 0;
 }
 
 .id-eyebrow {
   font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--cyan);
-  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #b45309;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.id-eyebrow::before {
-  content: '';
-  width: 24px; height: 1px;
-  background: var(--cyan);
-  display: inline-block;
-  flex-shrink: 0;
+  margin-bottom: 0.75rem;
 }
 
 .id-name {
-  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-size: 1.7rem;
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 0.9rem;
 }
-.id-name span       { display: block; color: var(--text); }
+.id-name span       { display: block; color: #1c1917; }
 .id-name-last {
   color: transparent;
   background: linear-gradient(135deg, #1e3a8a 0%, var(--cyan) 100%);
@@ -205,13 +212,13 @@ html, body {
 }
 
 .id-bio {
-  font-size: 0.92rem;
-  color: var(--text2);
-  line-height: 1.75;
-  margin-bottom: 2rem;
+  font-size: 0.78rem;
+  color: #57534e;
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
   text-align: justify;
-  padding-left: 1.25rem;
-  border-left: 2px solid var(--border2);
+  border-left: 2px solid rgba(180,83,9,0.3);
+  padding-left: 0.75rem;
 }
 
 /* ─── BOUTON ─────────────────────────────────────────── */
@@ -243,14 +250,38 @@ html, body {
 /* ─── ICÔNES DE BUREAU ───────────────────────────────── */
 .desktop-icons {
   position: absolute;
-  right: clamp(1.5rem, 4vw, 3rem);
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.55rem;
   z-index: 1;
   animation: fadeIn 0.8s 0.3s both;
+}
+
+.icons-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text3);
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+}
+
+.icons-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.icons-hint {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--text3);
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
 }
 
 .dsk-icon {
@@ -573,11 +604,7 @@ html, body {
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
 @media (max-width: 900px) {
-  .desktop-icons { right: 1rem; gap: 1rem; }
-  .dsk-icon { width: 76px; }
-  .folder { width: 52px; height: 44px; }
-  .folder::before { width: 22px; height: 10px; }
-  .folder::after  { width: 52px; height: 36px; }
+  .icons-row { gap: 1.5rem; }
 }
 
 @media (max-width: 640px) {
@@ -598,12 +625,17 @@ html, body {
   }
   .desktop-icons {
     position: relative;
-    right: auto; top: auto;
+    top: auto; left: auto;
     transform: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 1rem 0 2rem;
+  }
+  .icons-row { flex-wrap: wrap; justify-content: center; }
+  .postit {
+    position: relative;
+    top: auto !important; left: auto !important;
+    transform: rotate(-1deg);
+    margin: 1.5rem auto;
+    cursor: default;
   }
   .mac-win {
     position: relative !important;
