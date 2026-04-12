@@ -87,7 +87,7 @@ html, body {
 /* ─── BUREAU ─────────────────────────────────────────── */
 .desktop {
   position: fixed;
-  inset: 28px 0 80px 0;
+  inset: 28px 0 0 0;
   overflow: hidden;
   background: url('wallpaper.jpg') center / cover no-repeat;
 }
