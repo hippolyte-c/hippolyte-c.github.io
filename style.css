@@ -219,7 +219,7 @@ html, body {
 .icons-row {
   display: flex;
   flex-direction: row;
-  gap: 1.75rem;
+  gap: calc(1.75rem * 1.05);
 }
 
 .icons-hint {
@@ -237,17 +237,38 @@ html, body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.6rem 0.7rem;
+  padding: 0.45rem 0.55rem;
   border-radius: 12px;
   transition: background 0.18s;
   user-select: none;
   width: 100px;
 }
-.dsk-icon:hover  { background: rgba(255,255,255,0.12); }
-.dsk-icon.active { background: rgba(14,165,233,0.22); outline: 1.5px solid rgba(14,165,233,0.5); outline-offset: -1.5px; }
+.dsk-icon:hover  { background: none; }
+.dsk-icon.active { background: none; }
+
+.folder-wrap {
+  padding: 8px 10px 7px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0);
+  backdrop-filter: blur(0px) saturate(1);
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  transition: background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              backdrop-filter 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.dsk-icon:hover .folder-wrap {
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px) saturate(1.6);
+  transform: scaleY(1.05);
+}
+.dsk-icon.active .folder-wrap {
+  background: rgba(14,165,233,0.28);
+  backdrop-filter: blur(10px) saturate(1.6);
+}
 
 .dsk-icon span {
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #fff;
   text-align: center;
@@ -262,11 +283,11 @@ html, body {
   height: 64px;
   position: relative;
   filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.28));
-  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), filter 0.2s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
+              filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .dsk-icon:hover .folder {
-  transform: scale(1.12) translateY(-4px);
-  filter: drop-shadow(4px 8px 10px rgba(0,0,0,0.32));
+  filter: drop-shadow(4px 10px 12px rgba(0,0,0,0.3));
 }
 
 /* Onglet */
@@ -295,7 +316,7 @@ html, body {
 /* ─── FENÊTRES FLOTTANTES ────────────────────────────── */
 .mac-win {
   position: absolute;
-  width: 520px;
+  width: 572px;
   max-width: calc(100vw - 2rem);
   background: var(--surface);
   border: 0.5px solid rgba(0,0,0,0.12);
