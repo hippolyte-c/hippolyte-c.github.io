@@ -199,12 +199,28 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  z-index: 1;
+  animation: fadeIn 0.8s 0.3s both;
+  padding: 1.4rem 0.8rem 1.1rem;
+}
+
+.icons-group {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.7rem;
-  z-index: 1;
-  animation: fadeIn 0.8s 0.3s both;
-  padding: 1.4rem 2.2rem 1.1rem;
+  padding: 0 1.6rem;
+}
+
+.icons-group-sep {
+  width: 0.5px;
+  align-self: stretch;
+  background: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+  margin: 0.4rem 0;
 }
 
 .icons-label {
@@ -313,6 +329,64 @@ html, body {
 .f-purple { --ftab: #5b21b6; --fbody: #8b5cf6; }
 .f-cyan   { --ftab: #0369a1; --fbody: #0ea5e9; }
 
+/* ─── DOCUMENT (CSS) ─────────────────────────────────── */
+.doc-wrap {
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0);
+  backdrop-filter: blur(0px) saturate(1);
+  transition: background 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              backdrop-filter 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+.dsk-icon:hover .doc-wrap {
+  background: rgba(255,255,255,0.22);
+  backdrop-filter: blur(10px) saturate(1.6);
+  transform: translateY(-3px);
+}
+.dsk-icon.active .doc-wrap {
+  background: rgba(14,165,233,0.28);
+  backdrop-filter: blur(10px) saturate(1.6);
+}
+
+.doc-icon {
+  width: 52px;
+  height: 66px;
+  position: relative;
+  filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.28));
+  transition: filter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.dsk-icon:hover .doc-icon {
+  filter: drop-shadow(4px 10px 12px rgba(0,0,0,0.3));
+}
+
+/* Document body with text lines */
+.doc-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--doc-body);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 10px,
+    var(--doc-lines) 10px, var(--doc-lines) 11px
+  );
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+}
+
+/* Dog-ear folded corner */
+.doc-icon::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 15px; height: 15px;
+  background: var(--doc-tab);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+
+.d-green { --doc-body: #d1fae5; --doc-tab: #059669; --doc-lines: rgba(5,150,105,0.22); }
+.d-rose  { --doc-body: #ffe4e6; --doc-tab: #e11d48; --doc-lines: rgba(225,29,72,0.18); }
+
 /* ─── FENÊTRES FLOTTANTES ────────────────────────────── */
 .mac-win {
   position: absolute;
@@ -355,6 +429,8 @@ html, body {
 .chrome-orange { background: #ffe0b2; }
 .chrome-purple { background: #d1c4e9; }
 .chrome-cyan   { background: #b2ebf2; }
+.chrome-green  { background: #bbf7d0; }
+.chrome-rose   { background: #fce7f3; }
 
 .win-dots {
   display: flex;
@@ -598,6 +674,14 @@ html, body {
     top: auto; left: auto;
     transform: none;
     padding: 1rem 0 2rem;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .icons-group-sep {
+    width: 80%;
+    height: 0.5px;
+    align-self: auto;
+    margin: 0;
   }
   .icons-row { flex-wrap: wrap; justify-content: center; }
   .postit {
